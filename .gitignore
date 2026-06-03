@@ -1,0 +1,34 @@
+# Skompilowane pliki obiektowe
+*.slo
+*.lo
+*.o
+*.obj
+
+# Skompilowane biblioteki dynamiczne i statyczne
+*.so
+*.dylib
+*.dll
+*.lai
+*.la
+*.a
+*.lib
+
+# Pliki wykonywalne
+*.exe
+*.out
+*.app
+
+# Pliki konfiguracyjne IDE i edytorów (np. Visual Studio, VS Code, CLion)
+.vscode/
+.vs/
+*.suo
+*.user
+*.db
+*.ipch
+cmake-build-*/
+out/
+build/
+
+# Pliki tymczasowe i logi
+*.log
+*.tmp
