@@ -32,3 +32,5 @@ build/
 # Pliki tymczasowe i logi
 *.log
 *.tmp
+
+.idea/
