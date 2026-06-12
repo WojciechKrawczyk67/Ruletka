@@ -14,7 +14,33 @@ void UI::drawTable() {
     std::cout << "|   | 1 | 4 | 7 | 10 | 13 | 16 | 19 | 22 | 25 | 28 | 31 | 34 |\n";
     std::cout << "==============================================================\n";
 }
+int UI::displayMenu() {
+    int choice = 0;
+    while (true) {
+        std::cout << "\n--- KASYNO ONLINE ---\n";
+        std::cout << "1. Graj\n";
+        std::cout << "2. Stan konta\n";
+        std::cout << "3. Statystyki\n";
+        std::cout << "4. Wyjscie\n";
+        std::cout << "Wybierz opcje (1-4): ";
 
+        std::cin >> choice;
+
+        if (std::cin.fail() || choice < 1 || choice > 4) {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            std::cout << "[BLAD] Nieprawidlowy wybor! Wpisz cyfre od 1 do 4.\n";
+        } else {
+            return choice;
+        }
+    }
+}
+
+std::string UI::getUserInput() {
+    std::string input;
+    std::cin >> input;
+    return input;
+}
 
 void UI::showMessage(const std::string& message) {
     std::cout << message << std::endl;
