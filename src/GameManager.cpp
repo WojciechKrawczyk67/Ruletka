@@ -3,7 +3,21 @@
 #include <vector>
 #include <memory>
 
-class Bet;
+class Bet {
+protected:
+    double amount;          
+    int payoutMultiplier;  
+
+public:
+
+    Bet(double amount, int multiplier = 2);
+
+    virtual ~Bet() = default;
+
+    virtual bool isWinning(int winningNumber) const = 0;
+
+    double resolveBet(int winningNumber) const;
+};
 enum class Color; 
 
 class BetManager {
