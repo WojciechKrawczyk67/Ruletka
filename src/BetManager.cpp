@@ -37,3 +37,26 @@ bool ColorBet::isWinning(int winningNumber) const {
     }
     return betOnRed ? isRed : !isRed;
 }
+
+BetManager::BetManager() {}
+
+void BetManager::addParityBet(double amount, bool even) {
+    activeBets.push_back(std::make_unique<ParityBet>(amount, even));
+}
+
+void BetManager::addHalfBet(double amount, bool low) {
+    activeBets.push_back(std::make_unique<HalfBet>(amount, low));
+}
+
+void BetManager::addColorBet(double amount, bool red) {
+    activeBets.push_back(std::make_unique<ColorBet>(amount, red));
+}
+
+double BetManager::resolveAllBets(int winningNumber) {
+    double totalPayout = 0.0;
+    for (const auto& bet : activeBets) {
+        totalPayout += bet->resolveBet(winningNumber);
+    }
+    activeBets.clear();
+    return totalPayout;
+}
