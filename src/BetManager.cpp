@@ -8,3 +8,32 @@ double Bet::resolveBet(int winningNumber) const {
     }
     return 0.0;
 }
+
+ParityBet::ParityBet(double amount, bool even) : Bet(amount), betOnEven(even) {}
+
+bool ParityBet::isWinning(int winningNumber) const {
+    if (winningNumber == 0) return false;
+    return betOnEven ? (winningNumber % 2 == 0) : (winningNumber % 2 != 0);
+}
+
+HalfBet::HalfBet(double amount, bool low) : Bet(amount), betOnLow(low) {}
+
+bool HalfBet::isWinning(int winningNumber) const {
+    if (winningNumber == 0) return false;
+    return betOnLow ? (winningNumber >= 1 && winningNumber <= 18) : (winningNumber >= 19 && winningNumber <= 36);
+}
+
+ColorBet::ColorBet(double amount, bool red) : Bet(amount), betOnRed(red) {}
+
+bool ColorBet::isWinning(int winningNumber) const {
+    if (winningNumber == 0) return false;
+    int redNumbers[] = {1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36};
+    bool isRed = false;
+    for (int n : redNumbers) {
+        if (winningNumber == n) {
+            isRed = true;
+            break;
+        }
+    }
+    return betOnRed ? isRed : !isRed;
+}
