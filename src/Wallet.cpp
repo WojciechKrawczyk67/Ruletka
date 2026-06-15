@@ -7,9 +7,10 @@ void Wallet::addFunds(double amount) {
         balance += amount;
     }
 }
+
 bool Wallet::deductFunds(double amount) {
     if (amount <= 0 || amount > balance) {
-        return false; // Przerwanie działania, transakcja odrzucona
+        return false;
     }
     balance -= amount;
     return true;
