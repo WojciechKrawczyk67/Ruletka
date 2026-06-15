@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.10)
 project(Ruletka)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -12,12 +12,11 @@ set(SOURCES
         src/UI.cpp
         src/Wallet.cpp
         src/Wheel.cpp
-        # src/Statistics.cpp  <-- odkomentuj, jeśli używasz statystyk w danym branchu
 )
 
 # 2. Tworzenie pliku wykonywalnego
-add_executable(Casino_online ${SOURCES})
+add_executable(Ruletka ${SOURCES})
 
 # 3. Kluczowy krok: dodanie folderu include/ do ścieżek poszukiwania nagłówków.
 # Dzięki temu pliki w src/ znajdą nagłówki używając prostego #include "Nazwa.h"
-target_include_directories(Casino_online PRIVATE include)
+target_include_directories(Ruletka PRIVATE include)
