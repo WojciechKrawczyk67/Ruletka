@@ -26,4 +26,4 @@ Projekt został zorganizowany zgodnie z dobrymi praktykami dla języka C/C++:
 5. Maciej Kołtek (Diligent Engineer)
 
 ## Uruchomienie i Kompilacja
-(Miejsce na dopisanie instrukcji kompilacji po skonfigurowaniu środowiska np. CMake lub komend kompilatora)
+-> instrukcja na wiki
