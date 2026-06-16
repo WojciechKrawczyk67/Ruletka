@@ -14,6 +14,9 @@ Projekt został zorganizowany zgodnie z dobrymi praktykami dla języka C/C++:
 * **Wallet** - wirtualny portfel gracza i zarządzanie saldem.
 * **BetManager** - system rozliczania zakładów i mnożników.
 * **UI** - interfejs konsolowy, obsługa wejścia/wyjścia i walidacja danych.
+* **tests-wallet** - testy jednostkowe weryfikujące ochronę przed debetem.
+* **tests-wheel** - testy jednostkowe weryfikujące zakres losowania 0-36.
+* **tests-betmanager** - testy jednostkowe weryfikujące wygrane i regułę zera.
 
 ## Skład Zespołu (Scrum Team)
 1. **Wojciech Jan Krawczyk** (Scrum Master & Architekt)
